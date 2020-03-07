@@ -8,7 +8,7 @@ async function bootstrap() {
     logger,
   });
 
-  const port = Number.parseInt(process.env.HTTP_PORT || '3001', 10);
+  const port = Number.parseInt(process.env.PORT || '3001', 10);
   app.use(logger.logInfo());
   app.enableCors();
   app.use(logger.logError());
