@@ -12,8 +12,8 @@
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
     "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/src/main.js\"",
-    "prestart:prod": "npm install -g yarn && yarn install && yarn build",
     "start:prod": "node dist/main.js",
+    "postinstall": "yarn build",
     "start:develop": "forever --minUptime 4000 --spinSleepTime 4000 start dist/main.js && forever list",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "lint:fix": "tslint -p tsconfig.json -c tslint.json --fix"
